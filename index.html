@@ -1,3 +1,4 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -18,12 +19,7 @@
       color:#fff; text-align:center; padding:90px 20px 120px;
     }
 
-    /* LOGO: grande, sin caja, sin contraste extra */
-    .logo-wrapper{
-      display:flex;
-      justify-content:center;
-      margin-bottom: 22px;
-    }
+    .logo-wrapper{ display:flex; justify-content:center; margin-bottom: 22px; }
     .logo-wrapper img{
       width: min(520px, 88vw);
       height: auto;
@@ -52,13 +48,10 @@
     }
     .btn-secondary:hover{ background: rgba(255,255,255,.22); }
 
-    /* Menos espacio entre secciones */
     .container{ max-width:1100px; margin:auto; padding:60px 20px; }
-
     .center-text{ text-align:center; max-width:820px; margin:auto; }
     .center-text h2{ font-size:2rem; margin-bottom:14px; }
 
-    /* CLASES */
     .classes-grid{
       display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap:40px; margin-top:60px;
@@ -72,16 +65,13 @@
       display:flex; align-items:center; justify-content:center;
       color:#6b7280; font-size:.9rem;
     }
-    .class-image img{
-      width:100%; height:100%; object-fit:cover; display:block;
-    }
+    .class-image img{ width:100%; height:100%; object-fit:cover; display:block; }
     .class-content{ padding:30px; }
     .class-date{ color:#e11d48; font-weight:600; margin-bottom:8px; }
     .class-content h3{ margin-bottom:10px; }
     .class-content p{ font-size:.95rem; }
     .class-meta{ margin-top:15px; font-size:.85rem; color:#374151; }
 
-    /* NOTA ACCESO */
     .access-note{
       background:#fff7ed;
       border: 1px solid #fed7aa;
@@ -94,10 +84,9 @@
     }
     .access-note strong{ font-weight:700; }
 
-    /* CTA MEMBRESÍA */
     .membership-cta{
       margin-top: 60px;
-      margin-bottom: 18px; /* reduce hueco antes del formulario */
+      margin-bottom: 18px;
       background: #111827;
       color:#fff;
       border-radius: 26px;
@@ -123,21 +112,19 @@
     }
     .membership-cta .btn-outline:hover{ background: rgba(255,255,255,.08); }
 
-    /* FORMULARIO */
     .form-wrap{ max-width: 700px; margin: 0 auto; padding: 0 10px; }
-    #registro.container{ padding-top: 25px; } /* menos espacio arriba */
+    #registro.container{ padding-top: 25px; }
 
     .form-section{
       background:#fdf2f8;
       padding:80px 20px;
       border-radius:30px;
       max-width: 620px;
-      margin: 18px auto 0; /* antes 55px */
+      margin: 18px auto 0;
     }
 
     form{ display:flex; flex-direction:column; gap:18px; margin-top:28px; }
     label{ font-size:.9rem; font-weight:500; text-align:left; }
-
     input{
       margin-top:6px; padding:14px 16px; border-radius:12px;
       border:1px solid #d1d5db; font-size:1rem; width:100%;
@@ -156,6 +143,7 @@
       cursor:pointer; transition:.25s;
     }
     button:hover{ background:#be123c; }
+    button:disabled{ opacity:.65; cursor:not-allowed; }
 
     .legal{ font-size:.75rem; color:#6b7280; margin-top:10px; text-align:center; }
 
@@ -184,7 +172,6 @@
 
   <div class="hero-actions">
     <a href="#registro" class="btn btn-primary">Reservar mi lugar gratis</a>
-    <!-- REEMPLAZA ESTA URL POR LA DE COMPRA -->
     <a href="https://TU-URL-DE-COMPRA-AQUI.com" class="btn btn-secondary">Unirme a la Membresía</a>
   </div>
 </header>
@@ -202,11 +189,9 @@
 
   <div class="classes-grid">
 
-    <!-- CLASE 1 -->
     <div class="class-card">
       <div class="class-image">
-        <!-- Reemplaza por:
-        <img src="assets/img/clase-4-feb.jpg" alt="Clase 4 de febrero"> -->
+        <!-- <img src="assets/img/clase-4-feb.jpg" alt="Clase 4 de febrero"> -->
         Espacio para imagen (Clase 4 Feb)
       </div>
       <div class="class-content">
@@ -220,11 +205,9 @@
       </div>
     </div>
 
-    <!-- CLASE 2 -->
     <div class="class-card">
       <div class="class-image">
-        <!-- Reemplaza por:
-        <img src="assets/img/clase-7-feb.jpg" alt="Clase 7 de febrero"> -->
+        <!-- <img src="assets/img/clase-7-feb.jpg" alt="Clase 7 de febrero"> -->
         Espacio para imagen (Clase 7 Feb)
       </div>
       <div class="class-content">
@@ -249,12 +232,10 @@
     </p>
 
     <div class="cta-row">
-      <!-- REEMPLAZA ESTA URL POR LA DE COMPRA -->
       <a class="btn btn-buy" href="https://TU-URL-DE-COMPRA-AQUI.com">Comprar membresía</a>
       <a class="btn btn-outline" href="#registro">Solo quiero la clase en vivo</a>
     </div>
   </div>
-
 </section>
 
 <section id="registro" class="container">
@@ -265,9 +246,8 @@
         <p>Regístrate y recibe el acceso a la clase (en vivo) por email y WhatsApp.</p>
       </div>
 
+      <!-- FORM: Envío AJAX -> reset -> redirect a thanks.html -->
       <form action="https://formspree.io/f/mykjyzjw" method="POST" id="leadForm">
-        <!-- Opcional: redirección al enviar (si ya tienes una página gracias) -->
-        <!-- <input type="hidden" name="_next" value="https://TU-SITIO.com/gracias.html"> -->
 
         <label>
           Nombre completo
@@ -281,9 +261,8 @@
 
         <label>
           WhatsApp (código país + número)
-          <!-- Validación E.164:
-               - Debe iniciar con +
-               - 10 a 15 dígitos en total (sin espacios, sin guiones)
+          <!-- Formato E.164 (recomendado):
+               + y 10-15 dígitos totales, sin espacios, sin guiones
                Ej: +14155552671 / +573001234567
           -->
           <input
@@ -302,7 +281,7 @@
 
         <input type="hidden" name="source" value="Landing Clases Gratuitas Latinas Biz MindSet">
 
-        <button type="submit">Reservar mi lugar (solo en vivo)</button>
+        <button type="submit" id="submitBtn">Reservar mi lugar (solo en vivo)</button>
 
         <p class="legal">
           Al registrarte aceptas recibir información relacionada con estas clases por correo y WhatsApp.
@@ -318,22 +297,58 @@
 </footer>
 
 <script>
-  // Validación adicional (opcional) para forzar E.164 y mostrar error claro
-  // Mantiene el formulario simple y evita envíos con espacios/guiones.
   (function () {
     const form = document.getElementById('leadForm');
+    const submitBtn = document.getElementById('submitBtn');
     if (!form) return;
 
-    const phone = form.querySelector('input[name="whatsapp"]');
-    const re = /^\+[1-9]\d{9,14}$/;
+    // URL de gracias (mismo directorio del index.html)
+    const THANKS_URL = 'thanks.html';
 
-    form.addEventListener('submit', function (e) {
-      const v = (phone.value || '').trim();
+    // Validación E.164
+    const phoneInput = form.querySelector('input[name="whatsapp"]');
+    const phoneRegex = /^\+[1-9]\d{9,14}$/;
 
-      if (!re.test(v)) {
-        e.preventDefault();
-        phone.focus();
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      // Validación WhatsApp
+      const phoneVal = (phoneInput.value || '').trim();
+      if (!phoneRegex.test(phoneVal)) {
+        phoneInput.focus();
         alert('WhatsApp inválido. Usa formato internacional E.164: +14155552671 (sin espacios ni guiones).');
+        return;
+      }
+
+      // Deshabilitar botón para evitar doble envío
+      submitBtn.disabled = true;
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = 'Enviando...';
+
+      try {
+        const formData = new FormData(form);
+
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (!res.ok) {
+          // Formspree suele devolver JSON con error; mantenemos mensaje simple
+          throw new Error('No se pudo enviar el formulario.');
+        }
+
+        // 1) Limpiar formulario
+        form.reset();
+
+        // 2) Redireccionar a thanks
+        window.location.href = THANKS_URL;
+
+      } catch (err) {
+        alert('Hubo un problema enviando tus datos. Intenta nuevamente.');
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalText;
       }
     });
   })();
