@@ -18,33 +18,18 @@
       color:#fff; text-align:center; padding:90px 20px 120px;
     }
 
-    /* LOGO: más grande + contraste garantizado */
+    /* LOGO: grande, sin caja, sin contraste extra */
     .logo-wrapper{
       display:flex;
       justify-content:center;
       margin-bottom: 22px;
     }
-
-    /* Contenedor tipo "badge" para dar contraste con fondo */
-    .logo-badge{
-      background: rgba(255,255,255,.92);
-      border: 1px solid rgba(255,255,255,.55);
-      padding: 12px 18px;
-      border-radius: 18px;
-      box-shadow: 0 16px 30px rgba(0,0,0,.18);
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-    }
-
     .logo-wrapper img{
-      width: min(520px, 88vw);  /* más grande y responsive */
+      width: min(520px, 88vw);
       height: auto;
-      max-height: 140px;        /* controla el alto */
+      max-height: 150px;
       object-fit: contain;
-      filter: drop-shadow(0 10px 18px rgba(0,0,0,.12)); /* mejora legibilidad */
+      filter: none; /* sin sombra/contraste */
     }
 
     header h1{ font-size:2.6rem; font-weight:700; max-width:900px; margin:auto; }
@@ -81,7 +66,7 @@
       box-shadow:0 10px 25px rgba(0,0,0,0.06);
     }
 
-    /* Espacio para imagen por clase (puedes usar placeholder o img) */
+    /* Espacio para imagen por clase */
     .class-image{
       width:100%; height:210px; background:#e5e7eb;
       display:flex; align-items:center; justify-content:center;
@@ -166,9 +151,8 @@
 
       .logo-wrapper img{
         width: min(420px, 90vw);
-        max-height: 120px;
+        max-height: 130px;
       }
-      .logo-badge{ padding: 10px 14px; border-radius: 16px; }
 
       .membership-cta h2{ font-size:1.6rem; }
     }
@@ -179,11 +163,7 @@
 
 <header>
   <div class="logo-wrapper">
-    <div class="logo-badge">
-      <!-- LOGO: ruta recomendada para GitHub Pages en repo -->
-      <!-- Si tu site es https://USUARIO.github.io/mind-set/ entonces usa: -->
-      <img src="assets/img/logo-latinas-biz-mindset-.png" alt="Latinas Biz MindSet Membresía">
-    </div>
+    <img src="assets/img/logo-latinas-biz-mindset.png" alt="Latinas Biz MindSet Membresía">
   </div>
 
   <h1>Clases gratuitas para fortalecer tu mentalidad y tu negocio</h1>
@@ -195,7 +175,7 @@
   <div class="hero-actions">
     <a href="#registro" class="btn btn-primary">Reservar mi lugar gratis</a>
     <!-- URL COMPRA MEMBRESÍA (reemplazar) -->
-    <a href="https://shop.beacons.ai/ninigutierrez/5fba6d32-f669-4503-9d23-32e81a72e06b" class="btn btn-secondary">Unirme a la Membresía</a>
+    <a href="https://TU-URL-DE-COMPRA-AQUI.com" class="btn btn-secondary">Unirme a la Membresía</a>
   </div>
 </header>
 
@@ -250,7 +230,6 @@
 
   </div>
 
-  <!-- CTA MEMBRESÍA (mid-page) -->
   <div class="membership-cta">
     <h2>¿Quieres grabaciones + recursos + acompañamiento?</h2>
     <p>
@@ -268,7 +247,6 @@
 
 </section>
 
-<!-- FORMULARIO -->
 <section id="registro" class="container">
   <div class="form-wrap">
     <div class="form-section">
@@ -312,4 +290,3 @@
 
 </body>
 </html>
-
