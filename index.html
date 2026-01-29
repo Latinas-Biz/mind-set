@@ -1,4 +1,4 @@
-<!-- index.html -->
+<!-- index.html (actualizado: imágenes sin recorte + botones compra y formulario en #d51a5d) -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -64,7 +64,6 @@
     .center-text h2{ font-size:2rem; margin-bottom:10px; }
     .muted{ color:#6b7280; }
 
-    /* Bloques */
     .card{
       background:#ffffff;
       border:1px solid #e5e7eb;
@@ -90,13 +89,8 @@
       color:#fff;
       margin-bottom:10px;
     }
+    .tag-big{ font-size: 1rem; padding: 10px 16px; }
 
-   .tag-big{
-    font-size: 1rem;      /* antes .78rem */
-    padding: 10px 16px;   /* antes 6px 10px */
-  }
-
-    /* Features */
     .grid-3{
       display:grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -113,7 +107,6 @@
     .feature h4{ font-size: .98rem; margin-bottom:6px; }
     .feature p{ font-size: .9rem; color:#374151; }
 
-    /* Pricing */
     .pricing-wrap{
       margin-top:18px;
       display:grid;
@@ -147,11 +140,14 @@
       margin-top:16px;
       display:flex; gap:10px; flex-wrap:wrap;
     }
+
+    /* BOTÓN COMPRA (color solicitado) */
     .btn-buy{
       background:#d51a5d; color:#fff;
       padding:14px 22px;
     }
-    .btn-buy:hover{ background:#d51a5d; }
+    .btn-buy:hover{ background:#b5164f; }
+
     .btn-outline-dark{
       background: transparent; color:#fff;
       border:1px solid rgba(255,255,255,.35);
@@ -159,7 +155,6 @@
     }
     .btn-outline-dark:hover{ background: rgba(255,255,255,.08); }
 
-    /* Agenda */
     .agenda{
       background:#f9fafb;
       border:1px solid #e5e7eb;
@@ -179,26 +174,31 @@
       border:1px solid #e5e7eb;
       box-shadow:0 10px 25px rgba(0,0,0,0.05);
     }
-   .class-image{
-  width:100%;
-  height:190px;
-  background:#ffffff; /* antes #e5e7eb */
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden;    /* evita desbordes */
-}
 
-.class-image img{
-  width:100%;
-  height:100%;
-  object-fit:contain;      /* clave */
-  object-position:center;  /* centrado */
-  display:block;
-}
+    /* ✅ AJUSTE: sin recorte (contain) */
+    .class-image{
+      width:100%;
+      height:190px;
+      background:#ffffff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
+    }
+    .class-image img{
+      width:100%;
+      height:100%;
+      object-fit:contain;       /* clave */
+      object-position:center;   /* centrado */
+      display:block;
+    }
 
+    .class-content{ padding:18px 18px; }
+    .class-date{ color:#e11d48; font-weight:700; margin-bottom:6px; }
+    .class-content h3{ margin-bottom:8px; font-size:1.08rem; }
+    .class-content p{ font-size:.92rem; color:#374151; }
+    .class-meta{ margin-top:10px; font-size:.85rem; color:#374151; }
 
-    /* NOTA ACCESO */
     .access-note{
       background:#fff7ed;
       border: 1px solid #fed7aa;
@@ -211,7 +211,7 @@
     }
     .access-note strong{ font-weight:800; }
 
-    /* FORMULARIO */
+    /* FORM */
     .form-wrap{ max-width: 740px; margin: 0 auto; padding: 0 10px; }
     #registro.container{ padding-top: 22px; }
 
@@ -257,16 +257,16 @@
       font-size:.85rem;
     }
 
+    /* BOTÓN FORM (color solicitado) */
     button{
       margin-top:8px; padding:16px; border-radius:40px; border:none;
       background:#d51a5d; color:#fff; font-size:1rem; font-weight:700;
       cursor:pointer; transition:.25s;
     }
-    button:hover{ background:#d51a5d; }
+    button:hover{ background:#b5164f; }
     button:disabled{ opacity:.65; cursor:not-allowed; }
 
     .legal{ font-size:.75rem; color:#6b7280; margin-top:10px; text-align:center; }
-
     footer{ text-align:center; padding:38px 20px; font-size:.85rem; color:#6b7280; }
 
     @media (max-width: 980px){
@@ -307,12 +307,11 @@
 
   <div class="hero-actions">
     <a href="#registro" class="btn btn-primary">Reservar clase gratis</a>
-      <!-- REEMPLAZA ESTA URL POR LA DE COMPRA -->
-    <a href="https://shop.beacons.ai/ninigutierrez/5fba6d32-f669-4503-9d23-32e81a72e06b" class="btn btn-secondary">Unirme a la Membresía</a>
+    <a href="#membresia" class="btn btn-ghost">Conocer la membresía</a>
+    <a href="https://TU-URL-DE-COMPRA-AQUI.com" class="btn btn-secondary">Unirme a la Membresía</a>
   </div>
 </header>
 
-<!-- MEMBRESÍA -->
 <section id="membresia" class="container">
   <div class="center-text">
     <span class="tag">Membresía</span>
@@ -389,7 +388,6 @@
           <div style="opacity:.92">
             <div class="sub">Precio regular</div>
             <div class="price" style="font-size:1.65rem">$24.99</div>
-            <!-- Ajusta la fecha exacta si lo deseas -->
             <div class="sub">Desde <strong>8 de enero 2026</strong></div>
           </div>
         </div>
@@ -399,8 +397,7 @@
         </div>
 
         <div class="pricing-actions">
-          <!-- REEMPLAZA ESTA URL POR LA DE COMPRA -->
-          <a class="btn btn-buy" href="https://shop.beacons.ai/ninigutierrez/5fba6d32-f669-4503-9d23-32e81a72e06b">Comprar membresía</a>
+          <a class="btn btn-buy" href="https://TU-URL-DE-COMPRA-AQUI.com">Comprar membresía</a>
           <a class="btn btn-outline-dark" href="#registro">Solo quiero la clase en vivo</a>
         </div>
       </div>
@@ -408,7 +405,7 @@
       <div class="agenda">
         <h3>📅 Agenda 2026</h3>
         <ul>
-          <li><strong>Primer Master Class Zoom:</strong> 7 de enero · 7:00 PM (hora New York).</li>
+          <li><strong>Primer Master Class Zoom:</strong> 7 de enero · 7:00 PM (hora New York) · Mentor sorpresa.</li>
           <li><strong>Reuniones mensuales:</strong> los <strong>primeros miércoles</strong> de cada mes · 7:00 PM (hora New York).</li>
           <li>✔️ Añade estas fechas a tu calendario y no te pierdas ninguna sesión.</li>
         </ul>
@@ -417,10 +414,9 @@
   </div>
 </section>
 
-<!-- PRÓXIMAS CLASES GRATUITAS (MANTENER) -->
 <section class="container" style="padding-top: 18px;">
   <div class="center-text">
-    <span class="tag tag-big" style="background:#D51A5D">Clases Gratuitas</span>
+    <span class="tag tag-big" style="background:#e11d48">Clases gratuitas</span>
     <h2>Próximas clases en vivo</h2>
     <p class="muted">Todas las clases se realizan vía Zoom a las <strong>7:00 PM (hora New York)</strong>.</p>
   </div>
@@ -434,8 +430,8 @@
 
     <div class="class-card">
       <div class="class-image">
-        <!-- Reemplaza por: <img src="assets/img/clase-4-feb.jpg" alt="Clase 4 de febrero"> -->
-        Espacio para imagen (Clase 4 Feb)
+        <!-- Imagen WebP (sin recorte) -->
+        <img src="assets/img/clase-4-feb.webp?v=1" alt="Clase 4 de febrero">
       </div>
       <div class="class-content">
         <div class="class-date">📅 4 de febrero · 7:00 PM (NY)</div>
@@ -450,8 +446,9 @@
 
     <div class="class-card">
       <div class="class-image">
-        <img src="assets/img/clase-4-feb.webp?v=1" alt="Clase 4 de febrero">
-        Espacio para imagen (Clase 7 Feb)
+        <!-- Cambia por tu WebP cuando lo tengas -->
+        <!-- <img src="assets/img/clase-7-feb.webp?v=1" alt="Clase 7 de febrero"> -->
+        <span style="color:#6b7280; font-size:.9rem;">Espacio para imagen (Clase 7 Feb)</span>
       </div>
       <div class="class-content">
         <div class="class-date">📅 7 de febrero · 7:00 PM (NY)</div>
@@ -467,7 +464,6 @@
   </div>
 </section>
 
-<!-- REGISTRO -->
 <section id="registro" class="container">
   <div class="form-wrap">
     <div class="form-section">
@@ -568,7 +564,6 @@
     if (!form) return;
 
     const THANKS_URL = 'thanks.html';
-
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
     const numberRegex = /^[0-9]{6,14}$/;
 
