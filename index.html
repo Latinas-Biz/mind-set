@@ -7,7 +7,13 @@
 
   <meta name="description" content="Clases gratuitas vía Zoom para emprendedoras latinas. Psicología del emprendimiento e introducción práctica a la IA con GPT.">
 
+  <!-- Optimización de carga de fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- PRELOAD del logo (WebP) -->
+  <link rel="preload" as="image" href="assets/img/logo-latinas-biz-mindset.webp?v=1" type="image/webp" fetchpriority="high">
 
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; }
@@ -164,7 +170,6 @@
     button:disabled{ opacity:.65; cursor:not-allowed; }
 
     .legal{ font-size:.75rem; color:#6b7280; margin-top:10px; text-align:center; }
-
     footer{ text-align:center; padding:40px 20px; font-size:.85rem; color:#6b7280; }
 
     @media (max-width: 768px){
@@ -180,7 +185,18 @@
 
 <header>
   <div class="logo-wrapper">
-    <img src="assets/img/logo-latinas-biz-mindset.png" alt="Latinas Biz MindSet Membresía">
+    <!-- WebP + fallback PNG (misma apariencia) -->
+    <picture>
+      <source srcset="assets/img/logo-latinas-biz-mindset.webp?v=1" type="image/webp">
+      <img
+        src="assets/img/logo-latinas-biz-mindset.png?v=1"
+        alt="Latinas Biz MindSet Membresía"
+        width="2048"
+        height="1024"
+        fetchpriority="high"
+        loading="eager"
+        decoding="async">
+    </picture>
   </div>
 
   <h1>Clases gratuitas para fortalecer tu mentalidad y tu negocio</h1>
@@ -207,7 +223,6 @@
   </div>
 
   <div class="classes-grid">
-
     <div class="class-card">
       <div class="class-image">
         <!-- <img src="assets/img/clase-4-feb.jpg" alt="Clase 4 de febrero"> -->
@@ -239,7 +254,6 @@
         <div class="class-meta">💻 Vía Zoom · Acceso en vivo</div>
       </div>
     </div>
-
   </div>
 
   <div class="membership-cta">
@@ -265,9 +279,7 @@
         <p>Regístrate y recibe el acceso a la clase (en vivo) por email y WhatsApp.</p>
       </div>
 
-      <!-- FORM: Envío AJAX -> reset -> redirect a thanks.html -->
       <form action="https://formspree.io/f/mykjyzjw" method="POST" id="leadForm" novalidate>
-
         <label>
           Nombre completo
           <input type="text" name="name" placeholder="Tu nombre" required>
@@ -275,14 +287,12 @@
 
         <label>
           Correo electrónico
-          <!-- type="email" ya valida; además agregamos validación extra por JS -->
           <input type="email" name="email" id="emailInput" placeholder="tucorreo@email.com" required>
         </label>
 
         <label>
           WhatsApp
           <div class="phone-row">
-            <!-- CÓDIGO PAÍS (precargado) -->
             <select name="country_code" id="countryCode" required>
               <option value="+1" selected>🇺🇸 / 🇨🇦 +1</option>
               <option value="+52">🇲🇽 +52</option>
@@ -309,7 +319,6 @@
               <option value="+44">🇬🇧 +44</option>
             </select>
 
-            <!-- NÚMERO (solo dígitos) -->
             <input
               type="tel"
               name="whatsapp_number"
@@ -322,9 +331,7 @@
               title="Ingresa solo números (sin espacios ni guiones).">
           </div>
 
-          <!-- Campo final que enviaremos a Formspree como whatsapp E.164 -->
           <input type="hidden" name="whatsapp" id="whatsappE164" value="">
-
           <div class="helper">
             Selecciona tu <strong>código de país</strong> y escribe tu número <strong>solo con dígitos</strong>.
           </div>
@@ -362,28 +369,21 @@
 
     if (!form) return;
 
-    // Redirección
     const THANKS_URL = 'thanks.html';
 
-    // Email (validación más estricta que la del navegador; sin ser excesiva)
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-
-    // Número (solo dígitos), 6-14 dígitos. E.164 total 7-15; el código país se suma.
     const numberRegex = /^[0-9]{6,14}$/;
 
     function showError(msg) {
       errorBox.textContent = msg;
       errorBox.style.display = 'block';
     }
-
     function clearError() {
       errorBox.textContent = '';
       errorBox.style.display = 'none';
     }
 
-    // Construye whatsapp E.164 final
     function buildE164() {
-      // Limpia código país a solo + y dígitos (maneja +1-809 etc)
       const cc = (countryCode.value || '').replace(/[^+\d]/g, '');
       const num = (whatsappNumber.value || '').replace(/\D/g, '');
       const full = `${cc}${num}`;
@@ -391,7 +391,6 @@
       return full;
     }
 
-    // Validación en vivo (opcional)
     whatsappNumber.addEventListener('input', function () {
       this.value = this.value.replace(/\D/g, '');
       buildE164();
@@ -417,9 +416,6 @@
       }
 
       const finalE164 = buildE164();
-
-      // Validación final E.164 (7-15 dígitos después del +, total incluyendo país)
-      // finalE164 debe iniciar con + y luego 7-15 dígitos (sin guiones)
       const e164Regex = /^\+[1-9]\d{6,14}$/;
       if (!e164Regex.test(finalE164)) {
         whatsappNumber.focus();
@@ -442,12 +438,10 @@
 
         if (!res.ok) throw new Error('No se pudo enviar el formulario.');
 
-        // Limpiar formulario
         form.reset();
         whatsappE164.value = '';
         clearError();
 
-        // Redirigir
         window.location.href = THANKS_URL;
 
       } catch (err) {
