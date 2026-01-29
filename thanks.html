@@ -11,8 +11,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <!-- PRELOAD del logo (usa el archivo que vas a subir) -->
-  <link rel="preload" as="image" href="assets/img/logo-thanks.png?v=1" fetchpriority="high">
+  <!-- PRELOAD del logo WebP -->
+  <link rel="preload" as="image" href="assets/img/logo-thanks.webp?v=1" type="image/webp" fetchpriority="high">
 
   <style>
     *{ box-sizing:border-box; margin:0; padding:0; font-family:'Poppins', sans-serif; }
@@ -72,41 +72,3 @@
       margin-top:22px;
       text-align:center;
       font-size:.85rem;
-      color:#6b7280;
-    }
-  </style>
-</head>
-
-<body>
-  <div class="wrap">
-    <div class="card">
-
-      <!-- LOGO (nuevo) -->
-      <!-- Sube tu imagen como: assets/img/logo-thanks.png -->
-      <div class="logo">
-        <img
-          src="assets/img/logo-thanks.png?v=1"
-          alt="Latinas Biz MindSet"
-          width="2048"
-          height="1024"
-          fetchpriority="high"
-          loading="eager"
-          decoding="async">
-      </div>
-
-      <h1>Registro confirmado ✅</h1>
-      <p>
-        Gracias por registrarte. En breve recibirás la información de acceso a la clase por email y WhatsApp.
-      </p>
-
-      <a class="btn" href="index.html">Volver a la página</a>
-
-      <div class="small">
-        Nota: la grabación y recursos son exclusivos para miembros.
-      </div>
-    </div>
-
-    <footer>© 2026 Latinas Biz MindSet · Todos los derechos reservados</footer>
-  </div>
-</body>
-</html>
