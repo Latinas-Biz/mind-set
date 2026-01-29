@@ -179,17 +179,24 @@
       border:1px solid #e5e7eb;
       box-shadow:0 10px 25px rgba(0,0,0,0.05);
     }
-    .class-image{
-      width:100%; height:190px; background:#e5e7eb;
-      display:flex; align-items:center; justify-content:center;
-      color:#6b7280; font-size:.9rem;
-    }
-    .class-image img{ width:100%; height:100%; object-fit:cover; display:block; }
-    .class-content{ padding:18px 18px; }
-    .class-date{ color:#e11d48; font-weight:700; margin-bottom:6px; }
-    .class-content h3{ margin-bottom:8px; font-size:1.08rem; }
-    .class-content p{ font-size:.92rem; color:#374151; }
-    .class-meta{ margin-top:10px; font-size:.85rem; color:#374151; }
+   .class-image{
+  width:100%;
+  height:190px;
+  background:#ffffff; /* antes #e5e7eb */
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;    /* evita desbordes */
+}
+
+.class-image img{
+  width:100%;
+  height:100%;
+  object-fit:contain;      /* clave */
+  object-position:center;  /* centrado */
+  display:block;
+}
+
 
     /* NOTA ACCESO */
     .access-note{
