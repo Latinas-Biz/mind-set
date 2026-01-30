@@ -1,12 +1,12 @@
-<!-- index.html (actualizado: imágenes sin recorte + botones compra y formulario en #d51a5d) -->
+<!-- index.html (actualizado: texto del formulario menciona Latinas Biz + próximos eventos solo 4 de febrero) -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Latinas Biz MindSet | Clases Gratuitas + Membresía</title>
+  <title>Latinas Biz MindSet | Clase Gratuita + Membresía</title>
 
-  <meta name="description" content="Latinas Biz MindSet: comunidad estratégica para enfoque, visión y constancia. Regístrate a clases gratuitas vía Zoom y conoce la membresía.">
+  <meta name="description" content="Latinas Biz MindSet: comunidad estratégica para enfoque, visión y constancia. Regístrate a la clase gratuita vía Zoom y conoce la membresía.">
 
   <!-- Optimización de carga de fuentes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -175,7 +175,7 @@
       box-shadow:0 10px 25px rgba(0,0,0,0.05);
     }
 
-    /* ✅ AJUSTE: sin recorte (contain) */
+    /* ✅ AJUSTE: imagen sin recorte */
     .class-image{
       width:100%;
       height:190px;
@@ -188,8 +188,8 @@
     .class-image img{
       width:100%;
       height:100%;
-      object-fit:contain;       /* clave */
-      object-position:center;   /* centrado */
+      object-fit:contain;
+      object-position:center;
       display:block;
     }
 
@@ -307,10 +307,12 @@
 
   <div class="hero-actions">
     <a href="#registro" class="btn btn-primary">Reservar clase gratis</a>
-    <a href="https://shop.beacons.ai/ninigutierrez/5fba6d32-f669-4503-9d23-32e81a72e06b" class="btn btn-secondary">Unirme a la Membresía</a>
+    <a href="#membresia" class="btn btn-ghost">Conocer la membresía</a>
+    <a href="https://TU-URL-DE-COMPRA-AQUI.com" class="btn btn-secondary">Unirme a la Membresía</a>
   </div>
 </header>
 
+<!-- MEMBRESÍA -->
 <section id="membresia" class="container">
   <div class="center-text">
     <span class="tag">Membresía</span>
@@ -391,12 +393,10 @@
           </div>
         </div>
 
-        <div class="note">
-          Compra al mejor precio… el de hoy.
-        </div>
+        <div class="note">Compra al mejor precio… el de hoy.</div>
 
         <div class="pricing-actions">
-          <a class="btn btn-buy" href="https://shop.beacons.ai/ninigutierrez/5fba6d32-f669-4503-9d23-32e81a72e06b">Comprar membresía</a>
+          <a class="btn btn-buy" href="https://TU-URL-DE-COMPRA-AQUI.com">Comprar membresía</a>
           <a class="btn btn-outline-dark" href="#registro">Solo quiero la clase en vivo</a>
         </div>
       </div>
@@ -413,11 +413,12 @@
   </div>
 </section>
 
+<!-- PRÓXIMAS CLASES (solo 4 de febrero) -->
 <section class="container" style="padding-top: 18px;">
   <div class="center-text">
     <span class="tag tag-big" style="background:#e11d48">Clases gratuitas</span>
-    <h2>Próximas clases en vivo</h2>
-    <p class="muted">Todas las clases se realizan vía Zoom a las <strong>7:00 PM (hora New York)</strong>.</p>
+    <h2>Próxima clase en vivo</h2>
+    <p class="muted">Vía Zoom a las <strong>7:00 PM (hora New York)</strong>.</p>
   </div>
 
   <div class="access-note">
@@ -426,10 +427,8 @@
   </div>
 
   <div class="classes-grid">
-
     <div class="class-card">
       <div class="class-image">
-        <!-- Imagen WebP (sin recorte) -->
         <img src="assets/img/clase-4-feb.webp?v=1" alt="Clase 4 de febrero">
       </div>
       <div class="class-content">
@@ -442,33 +441,20 @@
         <div class="class-meta">💻 Vía Zoom · Acceso en vivo</div>
       </div>
     </div>
-
-    <div class="class-card">
-      <div class="class-image">
-        <!-- Cambia por tu WebP cuando lo tengas -->
-        <!-- <img src="assets/img/clase-7-feb.webp?v=1" alt="Clase 7 de febrero"> -->
-        <span style="color:#6b7280; font-size:.9rem;">Espacio para imagen (Clase 7 Feb)</span>
-      </div>
-      <div class="class-content">
-        <div class="class-date">📅 7 de febrero · 7:00 PM (NY)</div>
-        <h3>Aprende a usar IA (GPT) para tu negocio</h3>
-        <p>
-          Introducción práctica para emprendedoras: cómo usar GPT para ideación, organización, redacción,
-          planificación y soporte a tareas del negocio con prompts simples y aplicables.
-        </p>
-        <div class="class-meta">💻 Vía Zoom · Acceso en vivo</div>
-      </div>
-    </div>
-
   </div>
 </section>
 
+<!-- REGISTRO (texto inicial actualizado para Latinas Biz) -->
 <section id="registro" class="container">
   <div class="form-wrap">
     <div class="form-section">
       <div class="center-text">
         <h2>Reserva tu lugar gratuito</h2>
-        <p class="muted">Regístrate y recibe el acceso a la clase (en vivo) por email y WhatsApp.</p>
+        <p class="muted">
+          Este registro es para la clase en vivo y para conectarte con <strong>Latinas Biz MindSet</strong>, la comunidad donde trabajamos enfoque,
+          visión y constancia para avanzar con resultados reales.
+          <br><strong>Importante:</strong> si no eres miembro, el acceso es solo en vivo (sin grabación ni recursos).
+        </p>
       </div>
 
       <form action="https://formspree.io/f/mykjyzjw" method="POST" id="leadForm" novalidate>
@@ -532,12 +518,12 @@
 
         <div class="error" id="formError"></div>
 
-        <input type="hidden" name="source" value="Landing Clases Gratuitas Latinas Biz MindSet">
+        <input type="hidden" name="source" value="Landing Clase Gratis + Latinas Biz MindSet">
 
         <button type="submit" id="submitBtn">Reservar mi lugar (solo en vivo)</button>
 
         <p class="legal">
-          Al registrarte aceptas recibir información relacionada con estas clases por correo y WhatsApp.
+          Al registrarte aceptas recibir información relacionada con esta clase y con Latinas Biz MindSet por correo y WhatsApp.
           <br><strong>Nota:</strong> la grabación y recursos son exclusivos para miembros.
         </p>
       </form>
