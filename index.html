@@ -1,4 +1,4 @@
-<!-- index.html (actualizado: texto del formulario menciona Latinas Biz + próximos eventos solo 4 de febrero) -->
+<!-- index.html (actualizado: links compra Beacons + pricing/fechas al 2 Feb 2026 + bloque prueba social) -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -164,6 +164,75 @@
     .agenda ul{ margin-top:10px; padding-left: 18px; }
     .agenda li{ margin: 8px 0; color:#374151; }
 
+    /* PRUEBA SOCIAL */
+    .social-wrap{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap:14px;
+      align-items: stretch;
+    }
+    .metric-card{
+      background:#111827;
+      color:#fff;
+      border-radius:22px;
+      padding:22px 18px;
+      box-shadow:0 16px 40px rgba(0,0,0,0.12);
+    }
+    .metric-kpi{
+      font-size:2.3rem;
+      font-weight:900;
+      margin-top:10px;
+      letter-spacing:.2px;
+    }
+    .metric-label{
+      margin-top:6px;
+      opacity:.92;
+      font-size:.95rem;
+      line-height:1.35;
+    }
+    .metric-note{
+      margin-top:10px;
+      font-size:.82rem;
+      opacity:.85;
+    }
+    .testimonials{
+      background:#ffffff;
+      border:1px solid #e5e7eb;
+      border-radius:22px;
+      padding:22px 18px;
+      box-shadow:0 10px 25px rgba(0,0,0,0.05);
+    }
+    .t-grid{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap:12px;
+      margin-top:12px;
+    }
+    .t-card{
+      background:#fafafa;
+      border:1px solid #e5e7eb;
+      border-radius:18px;
+      padding:14px 14px;
+      min-height: 150px;
+    }
+    .t-quote{
+      color:#374151;
+      font-size:.9rem;
+      line-height:1.5;
+    }
+    .t-name{
+      margin-top:10px;
+      font-weight:800;
+      font-size:.88rem;
+      color:#111827;
+    }
+    .t-role{
+      font-size:.82rem;
+      color:#6b7280;
+      margin-top:2px;
+    }
+
     /* CLASES */
     .classes-grid{
       display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -175,7 +244,7 @@
       box-shadow:0 10px 25px rgba(0,0,0,0.05);
     }
 
-    /* ✅ AJUSTE: imagen sin recorte */
+    /* ✅ imagen sin recorte */
     .class-image{
       width:100%;
       height:190px;
@@ -269,6 +338,10 @@
     .legal{ font-size:.75rem; color:#6b7280; margin-top:10px; text-align:center; }
     footer{ text-align:center; padding:38px 20px; font-size:.85rem; color:#6b7280; }
 
+    @media (max-width: 1020px){
+      .social-wrap{ grid-template-columns: 1fr; }
+      .t-grid{ grid-template-columns: 1fr; }
+    }
     @media (max-width: 980px){
       .grid-3{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .pricing-wrap{ grid-template-columns: 1fr; }
@@ -307,6 +380,8 @@
 
   <div class="hero-actions">
     <a href="#registro" class="btn btn-primary">Reservar clase gratis</a>
+    <a href="#membresia" class="btn btn-ghost">Conocer la membresía</a>
+    <!-- ✅ LINK COMPRA (corregido) -->
     <a href="https://shop.beacons.ai/ninigutierrez/5fba6d32-f669-4503-9d23-32e81a72e06b" class="btn btn-secondary">Unirme a la Membresía</a>
   </div>
 </header>
@@ -378,23 +453,22 @@
 
     <div class="pricing-wrap">
       <div class="pricing">
-        <h3 style="margin-bottom:6px">Precio</h3>
+        <h3 style="margin-bottom:6px">Precio actual</h3>
+
         <div class="price-row">
           <div>
-            <div class="sub">Precio de lanzamiento</div>
-            <div class="price">$10.99</div>
-            <div class="sub">Hasta el <strong>7 de enero 2026</strong></div>
-          </div>
-          <div style="opacity:.92">
-            <div class="sub">Precio regular</div>
-            <div class="price" style="font-size:1.65rem">$24.99</div>
-            <div class="sub">Desde <strong>8 de enero 2026</strong></div>
+            <div class="sub">Membresía mensual</div>
+            <div class="price">$24.99</div>
+            <div class="sub">Actualizado al <strong>2 de febrero 2026</strong></div>
           </div>
         </div>
 
-        <div class="note">Compra al mejor precio… el de hoy.</div>
+        <div class="note">
+          Acceso inmediato a la comunidad, sesiones, recursos y grabaciones (solo para miembros).
+        </div>
 
         <div class="pricing-actions">
+          <!-- ✅ LINK COMPRA (corregido) -->
           <a class="btn btn-buy" href="https://shop.beacons.ai/ninigutierrez/5fba6d32-f669-4503-9d23-32e81a72e06b">Comprar membresía</a>
           <a class="btn btn-outline-dark" href="#registro">Solo quiero la clase en vivo</a>
         </div>
@@ -403,15 +477,72 @@
       <div class="agenda">
         <h3>📅 Agenda 2026</h3>
         <ul>
-          <li><strong>Reuniones mensuales:</strong> los <strong>primer miércoles</strong> de cada mes · 7:00 PM (hora New York).</li>
+          <li><strong>Reuniones mensuales:</strong> los <strong>primeros miércoles</strong> de cada mes · <strong>7:00 PM (NY)</strong>.</li>
+          <li><strong>Sesión de este mes:</strong> <strong>4 de febrero 2026</strong> · 7:00 PM (NY).</li>
           <li>✔️ Añade estas fechas a tu calendario y no te pierdas ninguna sesión.</li>
         </ul>
       </div>
     </div>
+
+    <!-- PRUEBA SOCIAL -->
+    <div style="margin-top:18px">
+      <h3 style="margin-bottom:6px">Prueba social</h3>
+      <p class="muted">Añadimos un bloque de testimonios + una métrica. Reemplaza el dato de la métrica con tu número real.</p>
+
+      <div class="social-wrap">
+        <div class="metric-card">
+          <div class="sub" style="opacity:.95;">Métrica destacada</div>
+
+          <!-- ✅ REEMPLAZA ESTE NÚMERO CON TU DATO REAL -->
+          <div class="metric-kpi">+___</div>
+
+          <div class="metric-label">
+            emprendedoras impactadas en la comunidad / clases (actualiza con tu dato real).
+          </div>
+
+          <div class="metric-note">
+            Sugerencias de KPI: # miembros activos, # asistentes por clase, % asistencia, NPS, # colaboraciones generadas.
+          </div>
+
+          <div style="margin-top:14px">
+            <a class="btn btn-buy" href="https://shop.beacons.ai/ninigutierrez/5fba6d32-f669-4503-9d23-32e81a72e06b">Unirme ahora</a>
+          </div>
+        </div>
+
+        <div class="testimonials">
+          <div style="font-weight:800; font-size:1.05rem;">Lo que dicen las mujeres de Latinas Biz</div>
+
+          <div class="t-grid">
+            <div class="t-card">
+              <div class="t-quote">“Me ayudó a recuperar enfoque y constancia. Dejé de dar vueltas y por fin ejecuté mi plan semanal sin burnout.”</div>
+              <div class="t-name">Carolina M.</div>
+              <div class="t-role">Servicios / Emprendedora</div>
+            </div>
+
+            <div class="t-card">
+              <div class="t-quote">“La comunidad me dio claridad y acompañamiento real. Tomo mejores decisiones y me siento más segura liderando.”</div>
+              <div class="t-name">Andrea P.</div>
+              <div class="t-role">E-commerce</div>
+            </div>
+
+            <div class="t-card">
+              <div class="t-quote">“Las sesiones me aterrizan: mentalidad, estrategia y acción. El cambio más grande fue dejar el perfeccionismo y avanzar.”</div>
+              <div class="t-name">Luisa G.</div>
+              <div class="t-role">Marca personal</div>
+            </div>
+          </div>
+
+          <div class="muted" style="margin-top:10px; font-size:.85rem;">
+            Nota: edita estos testimonios con nombres reales (o iniciales) cuando los tengas.
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<!-- PRÓXIMAS CLASES (solo 4 de febrero) -->
+<!-- PRÓXIMA CLASE (solo 4 de febrero) -->
 <section class="container" style="padding-top: 18px;">
   <div class="center-text">
     <span class="tag tag-big" style="background:#e11d48">Clases gratuitas</span>
@@ -431,7 +562,7 @@
       </div>
       <div class="class-content">
         <div class="class-date">📅 4 de febrero · 7:00 PM (NY)</div>
-        <h3>Como tu Psicología Impacta tu Negocio</h3>
+        <h3>Psicología del Emprendimiento</h3>
         <p>
           Sesión enfocada en claridad mental y gestión emocional para emprender: identificación de bloqueos,
           fortalecimiento del enfoque, toma de decisiones bajo presión y hábitos que sostienen el crecimiento.
@@ -442,7 +573,7 @@
   </div>
 </section>
 
-<!-- REGISTRO (texto inicial actualizado para Latinas Biz) -->
+<!-- REGISTRO -->
 <section id="registro" class="container">
   <div class="form-wrap">
     <div class="form-section">
